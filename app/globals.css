@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * CSS Custom Properties
+ * Brand colors and spacing tokens for CamTheBarber.
+ */
+:root {
+  /* Brand Colors — warmer, richer palette */
+  --color-cream: #FAF7F2;
+  --color-charcoal: #1A1A1A;
+  --color-muted-gold: #B8956A;
+  --color-soft-white: #FEFDFB;
+  --color-warm-gray: #5C5C5C;
+  --color-accent: #8B5E3C;
+  --color-accent-light: #C4956A;
+  --color-deep-burgundy: #4A2028;
+  --color-warm-sand: #E8DDD3;
+
+  /* Spacing */
+  --spacing-section: 5rem;
+  --spacing-section-mobile: 3rem;
+  --spacing-content-gap: 2rem;
+
+  /* Typography */
+  --font-size-base: 1rem;
+  --line-height-base: 1.6;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+}
+
+/*
+ * Base Styles
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/*
+ * Subtle Transition Utilities
+ */
+@layer utilities {
+  .transition-hover {
+    transition: opacity var(--transition-fast),
+                transform var(--transition-fast),
+                color var(--transition-fast),
+                background-color var(--transition-fast),
+                border-color var(--transition-fast);
+  }
+
+  .transition-base {
+    transition: opacity var(--transition-base),
+                transform var(--transition-base),
+                color var(--transition-base),
+                background-color var(--transition-base);
+  }
+
+  .transition-reveal {
+    transition: opacity var(--transition-slow),
+                transform var(--transition-slow);
+  }
+}
+
+/*
+ * Utility: subtle warm gradient backgrounds
+ */
+@layer utilities {
+  .bg-warm-gradient {
+    background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-warm-sand) 100%);
+  }
+
+  .bg-dark-gradient {
+    background: linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-deep-burgundy) 100%);
+  }
+}
