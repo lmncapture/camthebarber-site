@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
 
 /**
  * Navigation — visible immediately on load.
@@ -51,19 +50,14 @@ export default function Navigation({ bookingUrl }: NavigationProps) {
           aria-label="Main navigation"
           className="mx-auto max-w-content px-6 sm:px-10 py-4 flex items-center justify-between"
         >
-          {/* Brand mark / Logo */}
+          {/* Brand mark */}
           <a
             href="#hero"
-            className="transition-hover"
+            className={`font-serif text-lg font-medium tracking-tight transition-hover ${
+              isScrolled ? 'text-charcoal hover:text-accent' : 'text-cream hover:text-accent-light'
+            }`}
           >
-            <Image
-              src="/images/logo.png"
-              alt="CamTheBarber logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto object-contain"
-              priority
-            />
+            CamTheBarber
           </a>
 
           {/* Desktop nav links */}
